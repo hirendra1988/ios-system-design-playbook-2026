@@ -175,3 +175,11 @@ TokenStore          Owns & saves token
 TokenRefresher      Calls refresh API
 RetryAPIClient      Orchestrates refresh
 DefaultAPIClient    Reads token for headers
+
+
+# 4️⃣ How It Fits in Your Architecture (Important)
+Your structure is actually very clean:
+
+- RetryAPIClient → Decorator
+- RetryPolicy → Strategy
+- NetworkSession → Adapter

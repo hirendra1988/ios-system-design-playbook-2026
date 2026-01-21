@@ -17,11 +17,11 @@ final class RetryingAPIClient: APIClient {
     private var tokenStore: TokenStore?
     
     init(wrapped: APIClient,
-         returnPolicy: RetryPolicy,
+         retryPolicy: RetryPolicy,
          tokenRefresher: TokenRefresher? = nil,
          tokenStore: TokenStore? = nil) {
         self.wrapped = wrapped
-        self.retryPolicy = returnPolicy
+        self.retryPolicy = retryPolicy
         self.tokenRefresher = tokenRefresher
         self.tokenStore = tokenStore
     }

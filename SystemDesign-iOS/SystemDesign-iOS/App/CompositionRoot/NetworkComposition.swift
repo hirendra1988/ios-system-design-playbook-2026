@@ -22,7 +22,7 @@ final class NetworkComposition {
 
         // Decorated client (Retry + Auth)
         self.apiClient = RetryingAPIClient(wrapped: baseClient,
-                                           returnPolicy: retryPolicy,
+                                           retryPolicy: retryPolicy,
                                            tokenRefresher: tokenRefresher,
                                            tokenStore: tokenStore)
         

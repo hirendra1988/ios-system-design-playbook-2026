@@ -5,11 +5,14 @@
 //  Created by Hirendra Sharma on 20/01/26.
 //
 
+//That is Strategy (Policy) Pattern
+//Strategy Interface
 protocol RetryPolicy {
     func shouldRetry(error: Error, attempt: Int) -> Bool
     var maxRetryCount: Int { get }
 }
 
+//Concrete Strategy
 struct DefaultRetryPolicy: RetryPolicy {
     
     var maxRetryCount: Int {
