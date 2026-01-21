@@ -8,9 +8,6 @@
 import Foundation
 
 // NetworkSession (Adapter for URLSession)
-protocol NetworkSession {
-    func request(_ request: URLRequest) async throws -> (Data, URLResponse)
-}
 
 extension URLSession: NetworkSession {
     func request(_ request: URLRequest) async throws -> (Data, URLResponse) {
