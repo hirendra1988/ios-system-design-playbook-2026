@@ -22,17 +22,17 @@ Usage Flow:    ViewModels → APIClient
 - Creates the Composition Root
 
 ## 2️⃣ Composition Root (NetworkContainer)
-## What it is
+### What it is
 - Central place where all dependencies are wired
 - Knows about concrete implementations
 - Exists once for the whole app
 
-## Why it’s critical
+### Why it’s critical
 - Prevents scattered object creation
 - Makes dependency flow explicit
 - Allows easy swapping of implementations
 
-## What it creates
+### What it creates
 - DefaultAPIClient
 - RetryingAPIClient
 - Token store, retry policy, etc.
