@@ -15,14 +15,14 @@ final class NetworkComposition {
         let tokenRefresher = DefaultTokenRefresher()
         
         // Retry behaviour
-        let returnPolicy = DefaultRetryPolicy()
+        let retryPolicy = DefaultRetryPolicy()
         
         // Core networking
         let baseClient = DefaultAPIClient(tokenProvider: tokenStore)
 
         // Decorated client (Retry + Auth)
         self.apiClient = RetryingAPIClient(wrapped: baseClient,
-                                           returnPolicy: returnPolicy,
+                                           returnPolicy: retryPolicy,
                                            tokenRefresher: tokenRefresher,
                                            tokenStore: tokenStore)
         
